@@ -26,11 +26,12 @@ jobs:
       run: mvn clean install
       working-directory: ./goodgo
 
-    - name: Upload JAR as artifact
-      uses: actions/upload-artifact@v2
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: my-spring-app
-        path: ./goodgo/target/*.jar  # Adjust path to where your JAR is located
+        name: build-artifacts
+        path: target/*.jar
+
 
     - name: Run tests
       run: mvn test
