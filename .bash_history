@@ -270,3 +270,40 @@ sudo yum install -y amazon-linux-extras
 sudo amazon-linux-extras enable postgresql15
 sudo yum clean metadata
 scp -i "/c/Users/Admin/.ssh/terraDkey.pem" -r "/c/Users/Admin/Downloads/goodgo" ec2-user@15.206.92.2132:/home/ec2-user/
+sudo yum update -y
+sudo dnf install -y postgresql16 postgresql16-server
+sudo /usr/pgsql-16/bin/postgresql-16-setup initdb
+ls /usr/pgsql-16/bin/
+ls
+cd home
+which psql
+sudo find / -name initdb
+sudo /usr/bin/initdb -D /var/lib/pgsql/16/data
+/usr/bin/initdb -D /var/lib/pgsql/16/data
+sudo su - postgres
+sudo systemctl start postgresql-16
+sudo systemctl list-unit-files | grep postgresql
+sudo systemctl status postgresql
+sudo systemctl start postgresql
+sudo systemctl status postgresql.service
+pwd
+sudo yum install httpd -y
+sudo yum install php php-mysqlnd php-fpm php-xml php-json php-common php-cli php-opcache -y
+cd /var/www/html
+sudo wget https://wordpress.org/latest.tar.gz
+sudo tar -xvzf latest.tar.gz
+sudo mv wordpress/* ./
+sudo chown -R apache:apache /var/www/html
+cd /var/www/html/wp-content/plugins
+sudo git clone https://github.com/kevinoid/postgresql-for-wordpress.git
+sudo chown -R apache:apache /var/www/html/wp-content/plugins/postgresql-for-wordpress
+sudo systemctl status httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl status httpd
+sudo journalctl -u postgresql
+sudo /usr/bin/postgresql-setup --initdb
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+sudo systemctl status postgresql
+sudo -i -u postgres
