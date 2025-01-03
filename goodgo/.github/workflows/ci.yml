@@ -24,6 +24,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
+      working-directory: ./goodgo  # Specify the correct directory
 
     - name: Run tests
       run: mvn test
+      working-directory: ./goodgo  # Specify the correct directory
